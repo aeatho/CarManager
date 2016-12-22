@@ -43,8 +43,6 @@ public abstract class BaseNaviActivity extends Activity
   protected AMapNaviView mAMapNaviView;
   protected AMapNavi mAMapNavi;
   protected TTSController mTtsManager;
-  protected NaviLatLng mEndLatlng = new NaviLatLng(39.925846, 116.432765);
-  protected NaviLatLng mStartLatlng = new NaviLatLng(39.925041, 116.437901);
   protected final List<NaviLatLng> sList = new ArrayList<NaviLatLng>();
   protected final List<NaviLatLng> eList = new ArrayList<NaviLatLng>();
   protected List<NaviLatLng> mWayPointList;
@@ -56,15 +54,14 @@ public abstract class BaseNaviActivity extends Activity
     mTtsManager = TTSController.getInstance(getApplicationContext());
     mTtsManager.init();
 
-    //
     mAMapNavi = AMapNavi.getInstance(getApplicationContext());
     mAMapNavi.addAMapNaviListener(this);
     mAMapNavi.addAMapNaviListener(mTtsManager);
 
     //设置模拟导航的行车速度
-    mAMapNavi.setEmulatorNaviSpeed(75);
-    sList.add(mStartLatlng);
-    eList.add(mEndLatlng);
+    //mAMapNavi.setEmulatorNaviSpeed(75);
+    //sList.add(mStartLatlng);
+    //eList.add(mEndLatlng);
   }
 
   @Override protected void onResume() {

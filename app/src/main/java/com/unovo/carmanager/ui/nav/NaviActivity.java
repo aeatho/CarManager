@@ -3,6 +3,7 @@ package com.unovo.carmanager.ui.nav;
 import android.os.Bundle;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.navi.AMapNaviView;
+import com.amap.api.navi.enums.NaviType;
 import com.amap.api.navi.model.NaviLatLng;
 import com.unovo.carmanager.R;
 import com.unovo.carmanager.constant.Constants;
@@ -66,6 +67,10 @@ public class NaviActivity extends BaseNaviActivity {
 
   @Override public void onCalculateRouteSuccess() {
     super.onCalculateRouteSuccess();
-    //		mAMapNavi.startNavi(NaviType.EMULATOR);
+    mAMapNavi.startNavi(NaviType.GPS);
+  }
+
+  @Override public void onBackPressed() {
+
   }
 }
