@@ -1,7 +1,9 @@
 package com.unovo.carmanager.ui.nav.base;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
 import android.widget.Toast;
 import com.amap.api.navi.AMapNavi;
 import com.amap.api.navi.AMapNaviListener;
@@ -19,7 +21,6 @@ import com.amap.api.navi.model.NaviInfo;
 import com.amap.api.navi.model.NaviLatLng;
 import com.autonavi.tbt.NaviStaticInfo;
 import com.autonavi.tbt.TrafficFacilityInfo;
-import com.unovo.carmanager.base.BaseActivity;
 import com.unovo.carmanager.ui.nav.base.lib.ErrorInfo;
 import com.unovo.carmanager.ui.nav.base.lib.TTSController;
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ import java.util.List;
  * @date: 2016/12/22 15:04
  * @version: V1.0
  */
-public abstract class BaseNaviActivity extends BaseActivity
+public abstract class BaseNaviActivity extends Activity
     implements AMapNaviListener, AMapNaviViewListener {
 
   protected AMapNaviView mAMapNaviView;
@@ -48,9 +49,9 @@ public abstract class BaseNaviActivity extends BaseActivity
   protected final List<NaviLatLng> eList = new ArrayList<NaviLatLng>();
   protected List<NaviLatLng> mWayPointList;
 
-  @Override protected void init(Bundle savedInstanceState) {
-    super.init(savedInstanceState);
-
+  @Override protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
     //实例化语音引擎
     mTtsManager = TTSController.getInstance(getApplicationContext());
     mTtsManager.init();

@@ -20,12 +20,10 @@ import com.unovo.carmanager.ui.nav.base.BaseNaviActivity;
  * @version: V1.0
  */
 public class NaviActivity extends BaseNaviActivity {
-  @Override protected int getLayoutId() {
-    return R.layout.activity_basic_navi;
-  }
 
-  @Override protected void init(Bundle savedInstanceState) {
-    super.init(savedInstanceState);
+  @Override protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_basic_navi);
 
     mAMapNaviView = (AMapNaviView) findViewById(R.id.navi_view);
     mAMapNaviView.onCreate(savedInstanceState);
