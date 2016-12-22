@@ -139,7 +139,7 @@
           android:layout_height="wrap_content"
           android:layout_gravity="bottom|right"
           android:layout_marginBottom="10dp"
-          android:layout_marginRight="@dimen/horizontal_margin"
+          android:layout_marginRight="0dp"
           android:src="@drawable/btn_location"/>
 
       <Button

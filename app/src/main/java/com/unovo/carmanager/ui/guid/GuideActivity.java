@@ -238,6 +238,7 @@ public class GuideActivity extends BaseActivity
       address = data.getStringExtra(Constants.RESULT_ADDRESS);
       mDesitinationText.setText(address);
       mDestinationButton.setVisibility(View.VISIBLE);
+      mDestinationButton.setText(R.string.find_rout);
       mDetailContaner.setVisibility(View.GONE);
 
       mAmap.clear();
@@ -300,6 +301,7 @@ public class GuideActivity extends BaseActivity
         RouteTask.getInstance(getApplicationContext()).getEndPoint().getAddress());
     mDetailRoute.setText(String.format("距离%s,用时%s", distance, duration));
     mDestinationButton.setVisibility(View.VISIBLE);
+    mDestinationButton.setText(R.string.find_rout);
   }
 
   @Override public void onMarkDriveRoute(final DriveRouteResult driveRouteResult) {
@@ -315,7 +317,9 @@ public class GuideActivity extends BaseActivity
     drivingRouteOverlay.addToMap();
     drivingRouteOverlay.zoomToSpan();
 
-    mDestinationButton.setVisibility(View.GONE);
+    mDestinationButton.setVisibility(View.VISIBLE);
+    mDestinationButton.setText(R.string.start_nav);
+
     hideWaitDialog();
 
     mDetailContaner.setOnClickListener(new View.OnClickListener() {

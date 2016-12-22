@@ -72,4 +72,7 @@
   <string name="weather_live">实时</string>
   <string name="weather_forecast">预报</string>
   <string name="report_time">发布时间</string>
+
+  <string name="find_rout">查找路线</string>
+  <string name="start_nav">开始导航</string>
 </resources>

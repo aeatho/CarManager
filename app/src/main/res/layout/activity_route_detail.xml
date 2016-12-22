@@ -8,13 +8,13 @@
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="70dp"
+      android:background="@drawable/bg_bottom_bar"
       android:orientation="horizontal">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:gravity="center_vertical"
         android:padding="5dp"
-        android:background="@drawable/bg_bottom_bar"
         android:orientation="vertical"
         android:layout_weight="1">
       <TextView
@@ -38,6 +38,16 @@
           android:textSize="13sp"
           android:visibility="gone"/>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/guide"
+        android:layout_width="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_nav"/>
 
   </LinearLayout>
 
