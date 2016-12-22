@@ -63,6 +63,11 @@
         android:screenOrientation="portrait"/>
 
     <activity
+        android:name=".ui.nav.NaviActivity"
+        android:launchMode="singleTask"
+        android:screenOrientation="portrait"/>
+
+    <activity
         android:name=".ui.guid.DestinationActivity"
         android:launchMode="singleTop"
         android:screenOrientation="portrait"/>

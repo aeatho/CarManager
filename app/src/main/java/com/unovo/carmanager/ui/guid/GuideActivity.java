@@ -34,6 +34,7 @@ import com.unovo.carmanager.common.lbs.RouteTask;
 import com.unovo.carmanager.common.map.DriveRouteColorfulOverLay;
 import com.unovo.carmanager.common.map.DriveRouteDetailActivity;
 import com.unovo.carmanager.constant.Constants;
+import com.unovo.carmanager.ui.UIHelper;
 import com.unovo.carmanager.ui.hotel.HotelListActivity;
 import com.unovo.carmanager.utils.UIUtils;
 
@@ -166,17 +167,7 @@ public class GuideActivity extends BaseActivity
   @Override public void onClick(View v) {
     switch (v.getId()) {
       case R.id.destination_button:
-        if (mStartPosition == null) {
-          showToast("请选择出发地");
-          return;
-        }
-        if (TextUtils.isEmpty(address)) {
-          showToast("请输入目的地");
-          return;
-        }
-        showWaitDialog("路径规划中,请稍后...");
-        mPoiSearchTask.search(address,
-            RouteTask.getInstance(getApplicationContext()).getStartPoint().getCity());
+        doOperationByType();
         break;
       case R.id.location_image:
         mLocationTask.startSingleLocate();
@@ -197,6 +188,26 @@ public class GuideActivity extends BaseActivity
         break;
       default:
         break;
+    }
+  }
+
+  private void doOperationByType() {
+    if (mDestinationButton.getText().equals(getString(R.string.find_route))) {
+      // 搜索路径
+      if (mStartPosition == null) {
+        showToast("请选择出发地");
+        return;
+      }
+      if (TextUtils.isEmpty(address)) {
+        showToast("请输入目的地");
+        return;
+      }
+      showWaitDialog("路径规划中,请稍后...");
+      mPoiSearchTask.search(address,
+          RouteTask.getInstance(getApplicationContext()).getStartPoint().getCity());
+    } else {
+      // 导航操作
+      UIHelper.openNaviGuide(GuideActivity.this, mStartPosition, mEndPosition);
     }
   }
 
@@ -238,7 +249,7 @@ public class GuideActivity extends BaseActivity
       address = data.getStringExtra(Constants.RESULT_ADDRESS);
       mDesitinationText.setText(address);
       mDestinationButton.setVisibility(View.VISIBLE);
-      mDestinationButton.setText(R.string.find_rout);
+      mDestinationButton.setText(R.string.find_route);
       mDetailContaner.setVisibility(View.GONE);
 
       mAmap.clear();
@@ -301,15 +312,17 @@ public class GuideActivity extends BaseActivity
         RouteTask.getInstance(getApplicationContext()).getEndPoint().getAddress());
     mDetailRoute.setText(String.format("距离%s,用时%s", distance, duration));
     mDestinationButton.setVisibility(View.VISIBLE);
-    mDestinationButton.setText(R.string.find_rout);
+    mDestinationButton.setText(R.string.find_route);
   }
+
+  private DrivePath currentDrivePath;
 
   @Override public void onMarkDriveRoute(final DriveRouteResult driveRouteResult) {
     mAmap.clear();// 清理地图上的所有覆盖物
 
-    final DrivePath drivePath = driveRouteResult.getPaths().get(0);
+    currentDrivePath = driveRouteResult.getPaths().get(0);
     DriveRouteColorfulOverLay drivingRouteOverlay =
-        new DriveRouteColorfulOverLay(mAmap, drivePath, driveRouteResult.getStartPos(),
+        new DriveRouteColorfulOverLay(mAmap, currentDrivePath, driveRouteResult.getStartPos(),
             driveRouteResult.getTargetPos(), null);
     drivingRouteOverlay.setNodeIconVisibility(false);//设置节点marker是否显示
     drivingRouteOverlay.setIsColorfulline(true);//是否用颜色展示交通拥堵情况，默认true
@@ -318,15 +331,17 @@ public class GuideActivity extends BaseActivity
     drivingRouteOverlay.zoomToSpan();
 
     mDestinationButton.setVisibility(View.VISIBLE);
-    mDestinationButton.setText(R.string.start_nav);
+    mDestinationButton.setText(R.string.start_navi);
 
     hideWaitDialog();
 
     mDetailContaner.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
         Intent intent = new Intent(GuideActivity.this, DriveRouteDetailActivity.class);
-        intent.putExtra("drive_path", drivePath);
+        intent.putExtra("drive_path", currentDrivePath);
         intent.putExtra("drive_result", driveRouteResult);
+        intent.putExtra(Constants.START_POINT, mStartPosition);
+        intent.putExtra(Constants.END_POINT, mEndPosition);
         startActivity(intent);
       }
     });

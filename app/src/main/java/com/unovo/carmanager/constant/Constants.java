@@ -50,7 +50,6 @@ public class Constants {
   //路径
   public static final String PATH = "path_con";
 
-
   // the person u want 2 chat with;
   public static final String SENDER = "sender";
 
@@ -69,4 +68,11 @@ public class Constants {
   public static final String RESULT_ADDRESS = "RESULT_ADDRESS";
 
   public static final String ROUTE_DRIVE_FAILED = "ROUTE_DRIVE_FAILED";
+
+  public static final String START_POINT = "start_point";
+  public static final String END_POINT = "end_point";
+
+  public class APP_IDS {
+    public static final String ID_XUNFEI = "585b784f";
+  }
 }

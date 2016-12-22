@@ -2,7 +2,11 @@ package com.unovo.carmanager.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import com.amap.api.maps.model.LatLng;
+import com.unovo.carmanager.constant.Constants;
 import com.unovo.carmanager.ui.chat.ChattingActivity;
+import com.unovo.carmanager.ui.nav.NaviActivity;
 
 /**
  * STAY HUNGRY, STAY FOOLISH!
@@ -24,7 +28,7 @@ public class UIHelper {
     startChattingAction(context, contactid, username, false);
   }
 
-  public static void startChattingAction(Context context, String contactid, String username,
+  private static void startChattingAction(Context context, String contactid, String username,
       boolean clearTop) {
     Intent intent = new Intent(context, ChattingActivity.class);
     if (clearTop) {
@@ -32,6 +36,17 @@ public class UIHelper {
     }
     intent.putExtra(ChattingActivity.RECIPIENTS, contactid);
     intent.putExtra(ChattingActivity.CONTACT_USER, username);
+    context.startActivity(intent);
+  }
+
+  public static void openNaviGuide(Context context, LatLng startPoint, LatLng endPoint) {
+    Bundle bundle = new Bundle();
+    bundle.putParcelable(Constants.START_POINT, startPoint);
+    bundle.putParcelable(Constants.END_POINT, endPoint);
+
+    Intent intent = new Intent(context, NaviActivity.class);
+    intent.putExtras(bundle);
+
     context.startActivity(intent);
   }
 }
