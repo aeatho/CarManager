@@ -70,6 +70,8 @@ public class GuideActivity extends BaseActivity
   private PoiSearchTask mPoiSearchTask;
   private int REQUEST_SEARCH_ADDRESS = 999;
 
+  private static final float DEFAULT_ZOOM = 14;
+
   @Override protected int getActionBarTitle() {
     return R.string.title_guide;
   }
@@ -90,7 +92,10 @@ public class GuideActivity extends BaseActivity
     mMapView = (MapView) findViewById(R.id.map);
     mMapView.onCreate(savedInstanceState);
     mAmap = mMapView.getMap();
-    mAmap.moveCamera(CameraUpdateFactory.zoomTo(14));
+    mAmap.moveCamera(CameraUpdateFactory.zoomTo(DEFAULT_ZOOM));
+
+    mAmap.setTrafficEnabled(true);// 显示实时交通状况
+
     mAmap.getUiSettings().setZoomControlsEnabled(false);
     mAmap.getUiSettings().setScaleControlsEnabled(true);
     mAmap.setOnMapLoadedListener(this);
@@ -129,6 +134,10 @@ public class GuideActivity extends BaseActivity
     mMapView.onResume();
     if (mStartPosition == null || (mStartPosition.latitude == 0 && mStartPosition.longitude == 0)) {
       mLocationTask.startSingleLocate();
+    } else {
+      mAmap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+          new LatLng(mStartPosition.latitude, mStartPosition.longitude),
+          currentZoom == 0 ? DEFAULT_ZOOM : currentZoom + 0.000001f));
     }
   }
 
@@ -241,12 +250,15 @@ public class GuideActivity extends BaseActivity
     hideView();
   }
 
+  private float currentZoom;
+
   @Override public void onCameraChangeFinish(CameraPosition cameraPosition) {
     showView();
     if (mDestinationButton.getVisibility() == View.VISIBLE) {
       mStartPosition = cameraPosition.target;
       mRegeocodeTask.search(mStartPosition.latitude, mStartPosition.longitude);
     }
+    currentZoom = cameraPosition.zoom;
   }
 
   @Override public void onMapLoaded() {
@@ -271,8 +283,7 @@ public class GuideActivity extends BaseActivity
     RouteTask.getInstance(getApplicationContext()).setStartPoint(entity);
 
     mStartPosition = new LatLng(entity.getLatitue(), entity.getLongitude());
-    CameraUpdate cameraUpate =
-        CameraUpdateFactory.newLatLngZoom(mStartPosition, mAmap.getCameraPosition().zoom);
+    CameraUpdate cameraUpate = CameraUpdateFactory.newLatLngZoom(mStartPosition, DEFAULT_ZOOM);
     mAmap.animateCamera(cameraUpate);
   }
 
