@@ -1,12 +1,15 @@
 package com.unovo.carmanager.ui;
 
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -20,6 +23,7 @@ import com.unovo.carmanager.common.lbs.LocationTask;
 import com.unovo.carmanager.common.lbs.PositionEntity;
 import com.unovo.carmanager.common.network.HttpClient;
 import com.unovo.carmanager.constant.Constants;
+import com.unovo.carmanager.service.ShakeService;
 import com.unovo.carmanager.ui.chat.IMChattingHelper;
 import com.unovo.carmanager.ui.friend.FriendActivity;
 import com.unovo.carmanager.ui.guid.GuideActivity;
@@ -76,6 +80,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     initLBS();
     initStatus();
     initIM();
+    initService();
+  }
+
+  private void initService() {
+    bindService();
   }
 
   private void initIM() {
@@ -310,6 +319,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     if (internalReceiver != null) {
       unregisterReceiver(internalReceiver);
     }
+    excuteUnbindService();
   }
 
   private void doInitAction() {
@@ -325,6 +335,37 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
       //// 检测离线消息
       //checkOffineMessage();
       //mInitActionFlag = true;
+    }
+  }
+
+  //*****shake
+  private void bindService() {
+    Intent intent = new Intent(MainActivity.this, ShakeService.class);
+    bindService(intent, sc, Context.BIND_AUTO_CREATE);
+  }
+
+  private void excuteUnbindService() {
+    if (mBound) {
+      unbindService(sc);
+      mBound = false;
+    }
+  }
+
+  private ServiceConnection sc = new ShakeServiceConnection();
+  private boolean mBound;
+  private ShakeService mBindService;
+
+  private class ShakeServiceConnection implements ServiceConnection {
+
+    @Override public void onServiceConnected(ComponentName name, IBinder binder) {
+      ShakeService.ShakeBinder mBinder = (ShakeService.ShakeBinder) binder;
+      mBindService = mBinder.getService();
+
+      mBound = true;
+    }
+
+    @Override public void onServiceDisconnected(ComponentName name) {
+      mBound = false;
     }
   }
 }

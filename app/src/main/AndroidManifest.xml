@@ -141,6 +141,11 @@
 
     </activity>
 
+
+    <service
+        android:name=".service.ShakeService"/>
+
+    <!--高德地图-->
     <service android:name="com.amap.api.location.APSService"/>
 
 
