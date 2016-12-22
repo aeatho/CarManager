@@ -61,7 +61,7 @@
           android:textColor="#FFFFFF"
           android:maxLength="20"
           android:singleLine="true"
-          android:text="jiang"/>
+          tools:text="jiang"/>
     </LinearLayout>
 
     <LinearLayout
@@ -96,7 +96,7 @@
           android:inputType="textPassword"
           android:maxLength="16"
           android:singleLine="true"
-          android:text="zhongjiang"/>
+          tools:text="zhongjiang"/>
 
     </LinearLayout>
 
