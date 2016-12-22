@@ -112,15 +112,12 @@ public class ShakeService extends Service implements SensorEventListener {
 
   public void onShake() {
     locationTask = new LocationTask(UIUtils.getContext());
-    locationTask.startLocate();
+    locationTask.startSingleLocate();
     locationTask.setOnLocationGetListener(new LocationTask.OnLocationGetListener() {
       @Override public void onLocationGet(PositionEntity entity) {
         if (!StringUtils.isEmpty(entity.getLatitue()) && !StringUtils.isEmpty(
             entity.getLongitude())) {
-
           autoSOS(entity);
-
-          locationTask.stopLocate();
         }
       }
     });
