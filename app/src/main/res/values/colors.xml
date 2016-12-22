@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="pressedColor">#3566a0</color>
+  <color name="LoginBtnNormalColor">#503566a0</color>
+  <color name="background_color">#a2d03b</color>
+  <color name="text_color">#FFFFFF</color>
+  <color name="list_divider">@color/line_color</color>
+
+  <color name="white">#ffffff</color>
+  <color name="gray">#808080</color>
+  <color name="transparent">#00000000</color>
+  <color name="black">#ff000000</color>
+  <color name="orange">#FF7936</color>
+
+  <color name="text_dark">#af000000</color>
+  <color name="text_light">#3f000000</color>
+  <color name="light_gray">#1a000000</color>
+  <color name="lightest_gray">#0a000000</color>
+
+  <color name="main_black">#333</color>
+  <color name="main_purple">#576B95</color>
+  <color name="main_white">#ffffff</color>
+  <color name="main_grey">#8f8f8f</color>
+  <color name="main_grey_dark">#a0a0a0</color>
+  <color name="main_grey_light">#c8c8c8</color>
+
+  <color name="text_content">#ffa19d94</color>
+  <color name="text_desc">#ffbebbb4</color>
+  <color name="text_title">#ff5f5f5f</color>
+  <color name="blue">#ff169aff</color>
+
+  <color name="dialog_background">#fffbf6f2</color>
+  <color name="dialog_btn_press">#ffece5df</color>
+  <color name="dialog_divider">#ffe8e0da</color>
+  <color name="dialog_btn_normal">#fffbf6f2</color>
+  <color name="dialog_item_normal">#fff7f1ec</color>
+  <color name="dialog_item_press">#ffece5df</color>
+  <color name="dialog_backgroud_full">#88000000</color>
+
+
+  <color name="edit_save_btn_color_disable">#ffa8c6ed</color>
+  <color name="edit_save_btn_color_click">#ffffffff</color>
+
+
+  <color name="red_btn_color_normal">#ffff5454</color>
+  <color name="red_btn_color_pressed">#ffd24242</color>
+  <color name="red_btn_color_disable">#7fff5454</color>
+
+
+  <color name="normal_text_color">#ff353535</color>
+
+  <color name="emoji_line">#ffcbc9ca</color>
+
+  <color name="white_pressed1">#ffdfdfdf</color>
+
+
+  <drawable name="font_green">#ff3bbd79</drawable>
+  <color name="font_black_0">#000000</color>
+  <color name="font_black_content">#ff222222</color>
+  <color name="font_black_2">#ff222222</color>
+  <color name="font_black_content_disabled">#ffcacaca</color>
+  <color name="font_black_comment">#ff666666</color>
+  <color name="font_black_6">#666666</color>
+  <color name="font_black_9">#999999</color>
+  <color name="font_white">#ffffffff</color>
+  <color name="font_white_disable">#7fffffff</color>
+
+  <color name="lightgrey">#ff888888</color>
+  <color name="darkgrey">#6C6C6C</color>
+  <color name="grey">#ACACAC</color>
+</resources>

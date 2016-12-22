@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2b2e42">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="bottom|center">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/log_logo"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:paddingStart="35dp"
+      android:paddingEnd="35dp"
+      android:layout_gravity="center">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+      <TextView
+          android:id="@+id/tvName"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:background="@drawable/radius1"
+          android:hint="@string/usrHint"
+          android:drawableStart="@mipmap/usrname"
+          android:drawablePadding="10dp"
+          android:textSize="15sp"
+          android:paddingStart="10dp"
+          android:gravity="center|end"
+
+          android:textColor="#FFFFFF"/>
+
+      <EditText
+          android:id="@+id/et_name"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@drawable/radius2"
+          android:textSize="15sp"
+          android:paddingStart="10dp"
+          android:paddingEnd="10dp"
+          android:textColor="#FFFFFF"
+          android:maxLength="20"
+          android:singleLine="true"
+          android:text="jiang"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:background="@drawable/radius1"
+          android:hint="@string/pswHint"
+          android:drawableStart="@mipmap/psw"
+          android:drawablePadding="10dp"
+          android:textSize="15sp"
+          android:paddingStart="10dp"
+          android:gravity="end|center"
+          android:textColor="#FFFFFF"/>
+
+      <EditText
+          android:id="@+id/et_pwd"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@drawable/radius2"
+          android:textSize="15sp"
+          android:paddingStart="10dp"
+          android:paddingEnd="10dp"
+          android:textColor="#FFFFFF"
+          android:inputType="textPassword"
+          android:maxLength="16"
+          android:singleLine="true"
+          android:text="zhongjiang"/>
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:padding="35dp">
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/loginbtn"
+        android:text="@string/LoginBtn"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:clickable="true"
+        android:padding="10dp"/>
+
+
+  </LinearLayout>
+
+</LinearLayout>

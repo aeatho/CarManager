@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="80dp"
+      android:orientation="vertical"
+      android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="标题所在的位置"
+        android:textColor="@color/text_dark"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="活动详情描述在这里"
+        android:textColor="@color/main_grey"
+        android:textSize="14sp"/>
+
+  </LinearLayout>
+  <include layout="@layout/divide_15_top_bottom"/>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+      <TextView
+          android:id="@+id/textView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="4"
+          android:text="地址："
+          android:textColor="@color/text_dark"
+          android:textSize="16sp"/>
+
+      <TextView
+          android:id="@+id/tvPlace"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:text="活动的地址显示在此"
+          android:textColor="@color/main_grey"
+          android:textSize="14sp"/>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/divide_1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="4"
+          android:text="时间："
+          android:textColor="@color/text_dark"
+          android:textSize="16sp"/>
+
+      <TextView
+          android:id="@+id/tvMovementTime"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:text="活动时间"
+          android:textColor="@color/main_grey"
+          android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/divide_1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:text="创建者："
+          android:textColor="@color/text_dark"
+          android:textSize="16sp"/>
+
+      <TextView
+          android:id="@+id/tvCreator"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:text="郑孟青"
+          android:layout_marginTop="4dp"
+          android:textColor="@color/main_grey_dark"
+          android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/divide_1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="2"
+          android:text="参与者："
+          android:textColor="@color/text_dark"
+          android:textSize="16sp"
+          android:layout_marginBottom="6dp"
+          android:id="@+id/textView2"/>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp">
+
+          <ImageView
+              android:id="@+id/GoMap1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:clickable="true"
+              android:src="@mipmap/pic_1"/>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:paddingTop="10dp"
+              android:text="张强"
+              android:textColor="#adadad"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp">
+
+          <ImageView
+              android:id="@+id/GoMap2"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:clickable="true"
+              android:src="@mipmap/pic_2"/>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:paddingTop="10dp"
+              android:text="刘庆宇"
+              android:textColor="#adadad"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp">
+
+          <ImageView
+              android:id="@+id/GoMap3"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:clickable="true"
+              android:src="@mipmap/pic_3"/>
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:paddingTop="10dp"
+              android:text="余家"
+              android:textColor="#adadad"/>
+
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+
+    </LinearLayout>
+
+  </LinearLayout>
+  <include layout="@layout/divide_1"/>
+  <Button
+      android:id="@+id/btnJoin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:background="@drawable/joinbtn"
+      android:clickable="true"
+      android:padding="10dp"
+      android:text="@string/JoinBtn"
+      android:textColor="#FFFFFF"
+      android:textSize="20sp"/>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#fff">
+
+  <com.amap.api.maps.MapView
+      android:id="@+id/smallmap"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_above="@+id/btn_emer"
+      android:paddingBottom="10dp">
+  </com.amap.api.maps.MapView>
+
+  <TextView
+      android:id="@+id/et_show"
+      android:textColor="@color/dialog_btn_normal"
+      android:background="#88000000"
+      android:textSize="16sp"
+      android:paddingTop="8dp"
+      android:paddingBottom="8dp"
+      android:paddingLeft="12dp"
+      android:paddingRight="12dp"
+      android:lineSpacingExtra="2dp"
+      tools:text="昨日，特朗普击败政治老手希拉里，成功入主白宫。不过，金融市场并不待见这位美国新总统，无论是股市还是汇率市场，一场惨烈的绞杀战让无数人身心俱疲，钱包受累。"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+
+
+  <Button
+      android:background="@drawable/loginbtn"
+      android:layout_marginLeft="8dp"
+      android:layout_marginTop="2dp"
+      android:layout_marginBottom="8dp"
+      android:layout_marginRight="8dp"
+      android:id="@+id/btn_emer"
+      android:layout_width="match_parent"
+      android:layout_height="42dp"
+      android:text="确认求助"
+      android:textSize="16sp"
+      android:textColor="@color/white"
+      android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

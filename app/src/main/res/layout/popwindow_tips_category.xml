@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+  <ListView
+      android:id="@+id/listview"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:listSelector="@drawable/list_item_background"
+      android:overScrollMode="ifContentScrolls"
+      android:scrollbarSize="1dp"
+      android:scrollbarThumbVertical="@color/text_light"
+      android:scrollbars="vertical"/>
+</LinearLayout>

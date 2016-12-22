@@ -1,0 +1,75 @@
+<resources>
+  <string name="app_name">车服通</string>
+
+  <string name="pswHint">密  码:</string>
+  <string name="usrHint">账  号:</string>
+  <string name="LoginBtn">登录</string>
+  <string name="no_result">对不起，没有搜索到相关数据！</string>
+  <string name="JoinBtn">加入活动</string>
+
+  <string name="loading">加载中,请稍后...</string>
+
+  <string name="title_guide">智能导航</string>
+  <string name="title_feedback">客服留言</string>
+  <string name="title_feedback_detail">留言详情</string>
+  <string name="title_friends">我的好友</string>
+  <string name="title_active">我的活动</string>
+  <string name="title_active_detail">活动详情</string>
+  <string name="title_help">应急救援</string>
+  <string name="title_call">呼叫客服</string>
+  <string name="title_route_detail">驾车路线详情</string>
+  <string name="title_hotel_detail">酒店详情</string>
+  <string name="title_hotel_list">酒店列表</string>
+
+
+  <!-- Error View -->
+  <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+  <string name="error_view_no_data">暂无数据</string>
+  <string name="error_view_loading">@string/loading</string>
+  <string name="error_view_load_error_click_to_refresh">请求失败\r\n重试看看</string>
+  <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+
+  <string name="dialog_btn_confim">确认</string>
+  <string name="dialog_btn_cancel">取消</string>
+  <string name="dialog_title_alert">提示</string>
+
+
+  <string name="chatting_send">发送</string>
+  <string name="chat_footer_app_btn">更多</string>
+  <string name="chat_footer_smiley_btn">表情</string>
+  <string name="chat_footer_switch_mode_btn">语音说话与键盘输入切换</string>
+  <string name="chat_footer_switch_mode_voice_btn">切换到按住说话</string>
+  <string name="chat_footer_switch_mode_keybord_btn">切换到键盘</string>
+  <string name="chatfooter_cancel_rcd">手指上滑，取消发送</string>
+  <string name="chatfooter_cancel_rcd_release">松开手指，取消发送</string>
+  <string name="chatfooter_too_short">录音时间太短</string>
+
+
+
+  <string name="avatar_desc">头像</string>
+  <string name="media_ejected">储存卡已拔出，语音功能将暂时不可用</string>
+  <string name="media_no_memory">储存卡存储空间不足</string>
+  <string name="voice_cancel_rcd_release">松开手指，取消发送</string>
+  <string name="chatfooter_releasetofinish">松开 结束</string>
+  <string name="chatfooter_presstorcd">按住 说话</string>
+
+
+  <string name="notification_fmt_one_txttype">%s发来1条消息</string>
+  <string name="notification_fmt_one_imgtype">%s发来1张图片</string>
+  <string name="notification_fmt_one_voicetype">%s发来1段语音</string>
+  <string name="notification_fmt_one_filetype">%s发来1个文件</string>
+  <string name="str_system_message_group_notice">群组通知</string>
+
+  <string name="app_pic">[图片]</string>
+  <string name="app_music">[音乐]</string>
+  <string name="app_voice">[语音]</string>
+  <string name="app_video">[视频]</string>
+  <string name="app_file">[文件]</string>
+  <string name="app_location">[位置]</string>
+
+  <string name="fmt_time_length">%d\"</string>
+
+  <string name="weather_live">实时</string>
+  <string name="weather_forecast">预报</string>
+  <string name="report_time">发布时间</string>
+</resources>

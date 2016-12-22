@@ -1,0 +1,224 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1">
+
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.amap.api.maps.MapView>
+
+    <LinearLayout
+        android:id="@+id/fromto_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginRight="@dimen/horizontal_margin"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="top"
+          android:background="@drawable/border"
+          android:orientation="horizontal"
+          android:paddingBottom="8dp"
+          android:paddingLeft="@dimen/horizontal_padding"
+          android:paddingRight="@dimen/horizontal_padding"
+          android:paddingTop="8dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_start"/>
+
+        <TextView
+            android:id="@+id/address_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的位置(定位中)"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/destination_container"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="top"
+          android:background="@drawable/border"
+          android:orientation="horizontal"
+          android:paddingBottom="8dp"
+          android:paddingLeft="@dimen/horizontal_padding"
+          android:paddingRight="@dimen/horizontal_padding"
+          android:paddingTop="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_end"/>
+
+        <TextView
+            android:id="@+id/destination_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="请输入目的地"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+      </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/detailContent"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/blue"
+          android:orientation="horizontal"
+          android:paddingLeft="12dp"
+          android:visibility="gone"
+          android:paddingRight="12dp">
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingBottom="@dimen/vertical_padding"
+            android:paddingTop="@dimen/vertical_padding"
+            android:text="费用预估"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="visible"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="详情"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="@dimen/horizontal_margin"
+          android:layout_marginRight="@dimen/horizontal_margin"
+          android:layout_marginBottom="8dp"
+          android:orientation="vertical">
+
+      <ImageView
+          android:id="@+id/location_image"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom|right"
+          android:layout_marginBottom="10dp"
+          android:layout_marginRight="@dimen/horizontal_margin"
+          android:src="@drawable/btn_location"/>
+
+      <Button
+          android:id="@+id/destination_button"
+          android:layout_width="match_parent"
+          android:layout_height="42dp"
+          android:layout_marginBottom="8dp"
+          android:background="@drawable/loginbtn"
+          android:gravity="center"
+          android:text="查找路线"
+          android:textColor="@color/white"
+          android:textSize="16sp"
+          />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/grey"
+          android:gravity="center_vertical"
+          android:paddingLeft="12dp"
+          android:paddingRight="12dp"
+          android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/vertical_padding"
+            android:paddingTop="@dimen/vertical_padding"
+            android:text="便民服务"
+            android:textColor="@color/text_dark"
+            android:textSize="14sp"
+            android:visibility="visible"/>
+        <ImageView
+            android:id="@+id/imgLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_start"/>
+        <ImageView
+            android:id="@+id/imgSwitch"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_switch"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+          <TextView
+              android:id="@+id/lookforWeather"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:paddingBottom="@dimen/vertical_padding"
+              android:paddingTop="@dimen/vertical_padding"
+              android:text="查询天气"
+              android:textStyle="bold"
+              android:textColor="@color/text_dark"
+              android:textSize="14sp"
+              android:layout_marginRight="12dp"
+              android:visibility="visible"/>
+
+          <TextView
+              android:id="@+id/lookforHotel"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:paddingBottom="@dimen/vertical_padding"
+              android:paddingTop="@dimen/vertical_padding"
+              android:text="查找酒店"
+              android:textStyle="bold"
+              android:textColor="@color/text_dark"
+              android:textSize="14sp"
+              android:visibility="visible"/>
+        </LinearLayout>
+      </LinearLayout>
+
+    </LinearLayout>
+  </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef">
+
+  <TextView
+      android:gravity="center"
+      android:id="@+id/ChatWithWho_Tv"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="20sp"
+      android:textColor="#000"/>
+
+  <LinearLayout
+      android:background="#ccccce"
+      android:layout_width="match_parent"
+      android:layout_height="1dp">
+
+  </LinearLayout>
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1">
+
+    <ListView
+        android:divider="@null"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:id="@+id/lv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="36dp"
+        android:layout_gravity="center"
+        android:layout_height="36dp"/>
+
+  </FrameLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:orientation="horizontal">
+
+    <EditText
+        android:paddingStart="10dp"
+        android:background="@color/list_divider"
+        android:id="@+id/SendMessage_Et"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
+
+    <Button
+        android:id="@+id/SendMessage_Bt"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/joinbtn"
+        android:text="发送"/>
+  </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2c2e43"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="top|center_vertical"
+        android:background="@drawable/pic"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+      <ImageView
+          android:id="@+id/imgLogo"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_centerHorizontal="true"
+          android:layout_centerVertical="true"
+          android:src="@drawable/logo"/>
+
+      <TextView
+          android:id="@+id/tvDisplay"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/imgLogo"
+          android:layout_centerHorizontal="true"
+          android:text="dsadsadsa"
+          android:textColor="#FFFFFF"
+          android:textSize="18sp"
+          />
+
+    </RelativeLayout>
+
+  </FrameLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:orientation="vertical"
+      android:paddingLeft="6dp"
+      android:paddingRight="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/home_layout_magin"
+        android:layout_weight="1">
+      <com.unovo.carmanager.widget.ZoomLinearLayout
+          android:id="@+id/ly_guid"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_marginRight="@dimen/home_layout_magin"
+          android:layout_weight="1"
+          android:background="@drawable/change"
+          app:maxRotateDegree="0">
+
+        <LinearLayout
+            android:layout_width="@dimen/home_img_width"
+            android:layout_height="@dimen/home_img_width"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <ImageView
+              android:id="@+id/imageView2"
+              android:layout_width="@dimen/home_img_inner_width"
+              android:layout_height="@dimen/home_img_inner_width"
+              android:scaleType="centerInside"
+              android:src="@drawable/map"/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom|center_horizontal"
+              android:layout_marginTop="@dimen/home_text_magin"
+              android:singleLine="true"
+              android:text="@string/title_guide"
+              android:textColor="@color/white"
+              android:textSize="@dimen/home_info_size"/>
+
+        </LinearLayout>
+      </com.unovo.carmanager.widget.ZoomLinearLayout>
+
+      <com.unovo.carmanager.widget.ZoomLinearLayout
+          android:id="@+id/ly_feedback"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="@dimen/home_layout_magin"
+          android:layout_weight="1"
+          android:background="@drawable/change"
+          app:maxRotateDegree="0">
+
+        <LinearLayout
+            android:layout_width="@dimen/home_img_width"
+            android:layout_height="@dimen/home_img_width"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="@dimen/home_img_inner_width"
+              android:layout_height="@dimen/home_img_inner_width"
+              android:scaleType="centerInside"
+              android:src="@drawable/message"/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom|center_horizontal"
+              android:layout_marginTop="@dimen/home_text_magin"
+              android:singleLine="true"
+              android:text="@string/title_feedback"
+              android:textColor="@color/white"
+              android:textSize="@dimen/home_info_size"/>
+
+        </LinearLayout>
+      </com.unovo.carmanager.widget.ZoomLinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/home_layout_magin"
+        android:layout_marginTop="@dimen/home_layout_magin"
+        android:layout_weight="1">
+      <com.unovo.carmanager.widget.ZoomLinearLayout
+          android:id="@+id/ly_friend"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_marginRight="@dimen/home_layout_magin"
+          android:layout_weight="1"
+          android:background="@drawable/change"
+          app:maxRotateDegree="0">
+
+        <LinearLayout
+            android:layout_width="@dimen/home_img_width"
+            android:layout_height="@dimen/home_img_width"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <RelativeLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="@dimen/home_img_inner_width"
+                android:layout_height="@dimen/home_img_inner_width"
+                android:scaleType="centerInside"
+                android:src="@drawable/friend"/>
+            <TextView
+                android:id="@+id/redPoint"
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="right"
+                android:layout_toRightOf="@+id/img"
+                android:background="@drawable/shape_red_circle"
+                android:textColor="@color/white"
+                android:visibility="invisible"/>
+          </RelativeLayout>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom|center_horizontal"
+              android:layout_marginTop="@dimen/home_text_magin"
+              android:singleLine="true"
+              android:text="@string/title_friends"
+              android:textColor="@color/white"
+              android:textSize="@dimen/home_info_size"/>
+
+        </LinearLayout>
+      </com.unovo.carmanager.widget.ZoomLinearLayout>
+
+      <com.unovo.carmanager.widget.ZoomLinearLayout
+          android:id="@+id/ly_active"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="@dimen/home_layout_magin"
+          android:layout_weight="1"
+          android:background="@drawable/change"
+          app:maxRotateDegree="0">
+
+        <LinearLayout
+            android:layout_width="@dimen/home_img_width"
+            android:layout_height="@dimen/home_img_width"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="@dimen/home_img_inner_width"
+              android:layout_height="@dimen/home_img_inner_width"
+              android:scaleType="centerInside"
+              android:src="@drawable/active"/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom|center_horizontal"
+              android:layout_marginTop="@dimen/home_text_magin"
+              android:singleLine="true"
+              android:text="@string/title_active"
+              android:textColor="@color/white"
+              android:textSize="@dimen/home_info_size"/>
+
+        </LinearLayout>
+      </com.unovo.carmanager.widget.ZoomLinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/home_layout_magin"
+        android:layout_marginTop="@dimen/home_layout_magin"
+        android:layout_weight="1">
+      <com.unovo.carmanager.widget.ZoomLinearLayout
+          android:id="@+id/ly_call"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_marginRight="@dimen/home_layout_magin"
+          android:layout_weight="1"
+          android:background="@drawable/change"
+          app:maxRotateDegree="0">
+
+        <LinearLayout
+            android:layout_width="@dimen/home_img_width"
+            android:layout_height="@dimen/home_img_width"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="@dimen/home_img_inner_width"
+              android:layout_height="@dimen/home_img_inner_width"
+              android:scaleType="centerInside"
+              android:src="@drawable/call"/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom|center_horizontal"
+              android:layout_marginTop="@dimen/home_text_magin"
+              android:singleLine="true"
+              android:text="@string/title_call"
+              android:textColor="@color/white"
+              android:textSize="@dimen/home_info_size"/>
+
+        </LinearLayout>
+      </com.unovo.carmanager.widget.ZoomLinearLayout>
+
+      <com.unovo.carmanager.widget.ZoomLinearLayout
+          android:id="@+id/ly_help"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="@dimen/home_layout_magin"
+          android:layout_weight="1"
+          android:background="@drawable/change"
+          app:maxRotateDegree="0">
+
+        <LinearLayout
+            android:layout_width="@dimen/home_img_width"
+            android:layout_height="@dimen/home_img_width"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+          <ImageView
+              android:layout_width="@dimen/home_img_inner_width"
+              android:layout_height="@dimen/home_img_inner_width"
+              android:scaleType="centerInside"
+              android:src="@drawable/help"/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom|center_horizontal"
+              android:layout_marginTop="@dimen/home_text_magin"
+              android:singleLine="true"
+              android:text="@string/title_help"
+              android:textColor="@color/white"
+              android:textSize="@dimen/home_info_size"/>
+
+        </LinearLayout>
+      </com.unovo.carmanager.widget.ZoomLinearLayout>
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:layout_marginLeft="6dp"
+      android:layout_marginRight="6dp"
+      android:layout_marginTop="6dp"
+      android:background="@drawable/shape_bg_disable"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ly_gps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_gps_bg"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/home_layout_magin"
+        android:orientation="horizontal">
+
+      <ImageView
+          android:layout_width="22dp"
+          android:layout_height="22dp"
+          android:scaleType="centerCrop"
+          android:src="@drawable/ic_gps"/>
+
+      <TextView
+          android:layout_marginLeft="2dp"
+          android:id="@+id/showGPS"
+          android:layout_width="wrap_content"
+          android:layout_height="42dp"
+          android:layout_marginBottom="@dimen/home_layout_magin"
+          android:gravity="center"
+          android:text="GPS导航"
+          android:textColor="#FFFFFF"
+          android:textSize="8pt"/>
+
+    </LinearLayout>
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:background="#424356"-->
+    <!--android:layout_height="0.66dp"/>-->
+
+    <TextView
+        android:id="@+id/showStatus"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/home_layout_magin"
+        android:background="@drawable/main_status_bg"
+        android:gravity="center"
+        android:text="状态显示 ( 定位中... )"
+        android:textColor="#FFFFFF"
+        android:textSize="8pt"/>
+
+  </LinearLayout>
+
+</LinearLayout>

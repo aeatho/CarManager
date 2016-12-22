@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="functions">
+    <item>聊天页面</item>
+    <item>好友位置页面</item>
+  </string-array>
+</resources>

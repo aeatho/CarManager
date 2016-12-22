@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+  <declare-styleable name="ZoomLinearLayout">
+    <attr format="integer" name="maxRotateDegree"/>
+    <attr format="integer" name="maxDepth"/>
+  </declare-styleable>
+
+  <declare-styleable name="MaskLayout">
+    <attr format="reference" name="foreground"/>
+    <attr format="dimension" name="content_margin"/>
+    <attr format="dimension" name="content_marginLeft"/>
+    <attr format="dimension" name="content_marginRight"/>
+    <attr format="dimension" name="content_marginTop"/>
+    <attr format="dimension" name="content_marginBottom"/>
+  </declare-styleable>
+
+</resources>

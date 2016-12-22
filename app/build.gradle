@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+def buildHost() {
+  return System.getProperty("user.name")
+}
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.3"
+
+  defaultConfig {
+    applicationId "com.unovo.carmanager"
+    minSdkVersion 14
+    targetSdkVersion 22
+    versionCode 20161124
+    versionName "1.1.2"
+
+    ndk {
+      // 设置支持的 SO 库构架
+      abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a' //, 'x86', 'x86_64', 'mips', 'mips64'
+    }
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  packagingOptions {
+    exclude 'META-INF/DEPENDENCIES.txt'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/notice.txt'
+    exclude 'META-INF/license.txt'
+    exclude 'META-INF/dependencies.txt'
+    exclude 'META-INF/LGPL2.1'
+    exclude 'META-INF/ASL2.0'
+  }
+
+  applicationVariants.all { variant ->
+    variant.outputs.each { output ->
+      def apkName = "车服通_build_by_" + "${buildHost()}.apk"
+      output.outputFile = new File(output.outputFile.parent, apkName.toLowerCase())
+    }
+  }
+
+  productFlavors {
+    /**
+     * 正式上线发布版本*/
+    Aeatho {
+      applicationId "com.unovo.carmanager"
+      manifestPlaceholders =
+          [APP_LABEL: "@string/app_name", AMAP_APIKEY: "e64a1c8a0328c1f91bb8a74198020f01"]
+      resValue "string", "base_url", "http://cft.raywin.cn:85/"
+    }
+  }
+
+  dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile project(':bqmm.com')
+  }
+}

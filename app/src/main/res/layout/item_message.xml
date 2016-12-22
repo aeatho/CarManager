@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/list_item_background"
+      android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="15dp">
+
+      <TextView
+          android:id="@+id/Message_Title"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="客服语音留言"
+          android:textColor="@color/text_dark"
+          android:textSize="16sp"/>
+
+
+      <TextView
+          android:id="@+id/message_Time"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/Message_Title"
+          android:layout_marginTop="6dp"
+          android:drawablePadding="5dp"
+          android:drawableStart="@mipmap/movement_time"
+          android:text="留言时间"
+          android:textColor="#9a9b9f"
+          android:textSize="15sp"/>
+
+
+    </RelativeLayout>
+  </LinearLayout>
+
+</LinearLayout>

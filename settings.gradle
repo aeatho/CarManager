@@ -1,0 +1,3 @@
+include ':app',':bqmm.com'
+
+project(':bqmm.com').projectDir = new File('libraries/bqmm.com')

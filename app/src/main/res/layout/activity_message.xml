@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <com.unovo.carmanager.widget.LoadNextListView
+      android:id="@+id/listView_message"
+      android:divider="@color/list_divider"
+      android:dividerHeight="@dimen/list_divider_height"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#f2f2f2"/>
+
+  <com.unovo.carmanager.widget.EmptyLayout
+      android:id="@+id/error_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="visible"/>
+
+</RelativeLayout>
