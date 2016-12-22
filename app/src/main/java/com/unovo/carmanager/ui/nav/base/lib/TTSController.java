@@ -10,10 +10,12 @@ import com.amap.api.navi.model.AMapLaneInfo;
 import com.amap.api.navi.model.AMapNaviCross;
 import com.amap.api.navi.model.AMapNaviInfo;
 import com.amap.api.navi.model.AMapNaviLocation;
+import com.amap.api.navi.model.AMapNaviStaticInfo;
 import com.amap.api.navi.model.AMapNaviTrafficFacilityInfo;
 import com.amap.api.navi.model.AimLessModeCongestionInfo;
 import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.NaviInfo;
+import com.autonavi.tbt.NaviStaticInfo;
 import com.autonavi.tbt.TrafficFacilityInfo;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
@@ -182,15 +184,13 @@ public class TTSController implements AMapNaviListener {
 
   }
 
-  //@Override
-  //public void onArriveDestination(NaviStaticInfo naviStaticInfo) {
-  //
-  //}
-  //
-  //@Override
-  //public void onArriveDestination(AMapNaviStaticInfo aMapNaviStaticInfo) {
-  //
-  //}
+  @Override public void onArriveDestination(NaviStaticInfo naviStaticInfo) {
+
+  }
+
+  @Override public void onArriveDestination(AMapNaviStaticInfo aMapNaviStaticInfo) {
+
+  }
 
   @Override public void onCalculateRouteSuccess() {
 

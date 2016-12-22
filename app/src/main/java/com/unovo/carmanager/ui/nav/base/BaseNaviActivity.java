@@ -11,11 +11,13 @@ import com.amap.api.navi.model.AMapLaneInfo;
 import com.amap.api.navi.model.AMapNaviCross;
 import com.amap.api.navi.model.AMapNaviInfo;
 import com.amap.api.navi.model.AMapNaviLocation;
+import com.amap.api.navi.model.AMapNaviStaticInfo;
 import com.amap.api.navi.model.AMapNaviTrafficFacilityInfo;
 import com.amap.api.navi.model.AimLessModeCongestionInfo;
 import com.amap.api.navi.model.AimLessModeStat;
 import com.amap.api.navi.model.NaviInfo;
 import com.amap.api.navi.model.NaviLatLng;
+import com.autonavi.tbt.NaviStaticInfo;
 import com.autonavi.tbt.TrafficFacilityInfo;
 import com.unovo.carmanager.base.BaseActivity;
 import com.unovo.carmanager.ui.nav.base.lib.ErrorInfo;
@@ -46,8 +48,8 @@ public abstract class BaseNaviActivity extends BaseActivity
   protected final List<NaviLatLng> eList = new ArrayList<NaviLatLng>();
   protected List<NaviLatLng> mWayPointList;
 
-  @Override protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+  @Override protected void init(Bundle savedInstanceState) {
+    super.init(savedInstanceState);
 
     //实例化语音引擎
     mTtsManager = TTSController.getInstance(getApplicationContext());
@@ -266,5 +268,13 @@ public abstract class BaseNaviActivity extends BaseActivity
 
   @Override public boolean onNaviBackClick() {
     return false;
+  }
+
+  @Override public void onArriveDestination(NaviStaticInfo naviStaticInfo) {
+
+  }
+
+  @Override public void onArriveDestination(AMapNaviStaticInfo aMapNaviStaticInfo) {
+
   }
 }

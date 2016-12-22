@@ -60,6 +60,11 @@ public class FriendActivity extends BaseActivity
     });
   }
 
+  @Override protected void onDestroy() {
+    super.onDestroy();
+    unregisterReceiver(internalReceiver);
+  }
+
   private InternalReceiver internalReceiver;
 
   /**

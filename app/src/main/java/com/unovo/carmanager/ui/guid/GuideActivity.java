@@ -135,11 +135,12 @@ public class GuideActivity extends BaseActivity
     mMapView.onResume();
     if (mStartPosition == null || (mStartPosition.latitude == 0 && mStartPosition.longitude == 0)) {
       mLocationTask.startSingleLocate();
-    } else {
-      mAmap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-          new LatLng(mStartPosition.latitude, mStartPosition.longitude),
-          currentZoom == 0 ? DEFAULT_ZOOM : currentZoom + 0.000001f));
     }
+    //else {
+    //  mAmap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+    //      new LatLng(mStartPosition.latitude, mStartPosition.longitude),
+    //      currentZoom == 0 ? DEFAULT_ZOOM : currentZoom + 0.000001f));
+    //}
   }
 
   @Override protected void onPause() {
