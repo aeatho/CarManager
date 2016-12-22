@@ -13,6 +13,7 @@ import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.route.BusRouteResult;
 import com.amap.api.services.route.DrivePath;
 import com.amap.api.services.route.DriveRouteResult;
+import com.amap.api.services.route.RideRouteResult;
 import com.amap.api.services.route.RouteSearch;
 import com.amap.api.services.route.RouteSearch.DriveRouteQuery;
 import com.amap.api.services.route.RouteSearch.FromAndTo;
@@ -152,5 +153,9 @@ public class RouteTask implements OnRouteSearchListener {
   }
 
   @Override public void onWalkRouteSearched(WalkRouteResult arg0, int arg1) {
+  }
+
+  @Override public void onRideRouteSearched(RideRouteResult rideRouteResult, int i) {
+
   }
 }

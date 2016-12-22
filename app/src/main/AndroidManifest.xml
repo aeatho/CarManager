@@ -72,11 +72,6 @@
         android:screenOrientation="portrait"/>
 
     <activity
-        android:name=".ui.NaviActivity"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait"/>
-
-    <activity
         android:name=".ui.friend.FriendActivity"
         android:launchMode="singleTask"
         android:screenOrientation="portrait"/>
