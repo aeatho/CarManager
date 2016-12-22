@@ -11,6 +11,19 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
+import com.unovo.carmanager.bean.SOSType;
+import com.unovo.carmanager.common.lbs.LocationTask;
+import com.unovo.carmanager.common.lbs.PositionEntity;
+import com.unovo.carmanager.common.network.HttpClient;
+import com.unovo.carmanager.utils.DateUtils;
+import com.unovo.carmanager.utils.Settings;
+import com.unovo.carmanager.utils.StringUtils;
+import com.unovo.carmanager.utils.UIUtils;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.unovo.carmanager.utils.UIUtils.showToast;
 
 /**
  * STAY HUNGRY, STAY FOOLISH!
@@ -36,6 +49,7 @@ public class ShakeService extends Service implements SensorEventListener {
   private long mSensorLastUpdateTime;
 
   private ShakeBinder mBinder = new ShakeBinder();
+  private LocationTask locationTask;
 
   public class ShakeBinder extends Binder {
     public ShakeService getService() {
@@ -97,7 +111,38 @@ public class ShakeService extends Service implements SensorEventListener {
   }
 
   public void onShake() {
+    locationTask = new LocationTask(UIUtils.getContext());
+    locationTask.startLocate();
+    locationTask.setOnLocationGetListener(new LocationTask.OnLocationGetListener() {
+      @Override public void onLocationGet(PositionEntity entity) {
+        if (!StringUtils.isEmpty(entity.getLatitue()) && !StringUtils.isEmpty(
+            entity.getLongitude())) {
 
+          autoSOS(entity);
+
+          locationTask.stopLocate();
+        }
+      }
+    });
+  }
+
+  private void autoSOS(PositionEntity entity) {
+    Call<String> sos = HttpClient.getInstance()
+        .getAPIs()
+        .sos(Settings.getUID(this), entity.getLatitue(), entity.getLongitude(),
+            DateUtils.getCurrentTimeStap(), -1, SOSType.AUTO.getType());
+
+    sos.enqueue(new Callback<String>() {
+      @Override public void onResponse(Call<String> call, Response<String> response) {
+        if (response.code() == 200 && response.body() != null) {
+          UIUtils.showToast("上传GPS信息成功");
+        }
+      }
+
+      @Override public void onFailure(Call<String> call, Throwable t) {
+        showToast(t.getMessage());
+      }
+    });
   }
 
   @Override public void onAccuracyChanged(Sensor sensor, int accuracy) {
