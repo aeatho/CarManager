@@ -3,7 +3,6 @@ package com.unovo.carmanager.ui.sos;
 import android.location.GpsStatus;
 import android.location.Location;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -177,11 +176,11 @@ public class SOSActivity extends BaseActivity
       sb.append(newLocation.getBearing());
       mEditText.setText(sb.toString());
 
-      new Handler().postDelayed(new Runnable() {
-        @Override public void run() {
-          uploadGPS();
-        }
-      }, 3000);
+      //new Handler().postDelayed(new Runnable() {
+      //  @Override public void run() {
+      uploadGPS();
+      //  }
+      //}, 3000);
     } else {
       //如果传入的Location对象为空，则清空EditText
       mEditText.setText("");

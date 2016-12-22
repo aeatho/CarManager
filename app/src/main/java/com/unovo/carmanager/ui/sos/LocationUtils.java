@@ -21,7 +21,7 @@ import com.unovo.carmanager.utils.Utils;
  */
 public class LocationUtils {
   private static final long MIN_TIME_UPDATE = 3000;
-  private static final float MIN_DISTANCE_UPDATE = 8;
+  private static final float MIN_DISTANCE_UPDATE = 0;
 
   private LocationImpl mLocationHelper;
   private LocationManager mLocationManager;
